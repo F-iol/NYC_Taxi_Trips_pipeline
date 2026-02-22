@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: taxi_spark_lab
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    volumes:
+    - ../src:/home/jovyan/src
+    - ../data:/home/jovyan/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
